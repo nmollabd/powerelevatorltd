@@ -1,0 +1,273 @@
+/*
+Theme Name: MWRA Content Editor Style
+Author: GoingClear Interactive
+Author URI: https://www.goingclear.com/
+Version: 1.0.0
+Text Domain: mwra
+*/
+
+@import "bootstrap";
+
+/***********************************
+BASE STYLES
+***********************************/
+
+// COLORS
+:root {
+	--red:  #EF4136;
+	--black:  #111111;
+	--white:  #FFFFFF;
+	--primary:  #3333f5;
+	--warning:  #f4c133;
+}
+
+// FONTS 
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;500&family=Raleway:wght@400;500&display=swap");
+
+// FONTS 
+$roboto: "Roboto", sans-serif;
+
+// MIXIN
+@import 'mixin';
+
+*:not(ul):not(ol) {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html, body, div, span, img, a, p, h1, h2, h3, 
+h4, h5, h6, option, legend, label, 
+table, th, td, tr, article, aside, 
+caption, figure, footer, header, hgroup, 
+mark, nav, section, time, audio, video {
+    margin: 0; 
+    padding: 0; 
+    border: 0; 
+    outline: 0;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+html {
+	margin: 0;
+	padding: 0;
+}
+
+ul, ol {
+	margin: 0;
+}
+
+body {
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	color: var(--black);
+	background: var(--white);
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: blackscale;
+	font: 400 16px/26px $roboto;
+}
+
+h1, .h1 { font-size: 60px; line-height: 70px; }
+h2, .h2 { font-size: 48px; line-height: 58px; }
+h3, .h3 { font-size: 36px; line-height: 46px; }
+h4, .h4 { font-size: 30px; line-height: 40px; }
+h5, .h5 { font-size: 24px; line-height: 34px; }
+h6, .h6 { font-size: 18px; line-height: 28px; }
+
+h1, h2, h3, h4, h5, h6, 
+.h1, .h2, .h3, .h4, .h5, .h6 {
+	font-weight: 700;
+	margin-bottom: 0;
+	color: var(--black);
+}
+
+a, button {
+
+	&:hover, &:focus {
+		outline: 0;
+		text-decoration: none;
+	}
+}
+
+p {
+	margin: 0 0 30px;
+}
+
+hr {
+	margin: 0;
+	padding: 0;
+	border-width: 2px;
+	border-color: var(--primary);
+}
+
+section {
+	padding: 50px 0;
+}
+
+input[type="text"]:not(.select2-input),
+input[type="number"], input[type="email"],
+input[type="tel"], input[type="search"],
+input[type="password"], input[type="file"],
+input[type="url"], select, textarea {
+	@include appearance;
+	width: 100% !important;
+	height: auto !important;
+	font-size: 16px !important;
+	font-weight: 300 !important;
+	box-shadow: none !important;
+	line-height: 22px !important;
+	border-radius: 8px !important;
+	color: var(--black) !important;
+	padding: 9px 16px 11px !important;
+	border: 1px solid #ECE6DA !important;
+	background: var(--white) !important;
+	@include transition(all 0.5s ease);
+	-webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+	@include placeholder(#111111, 16px, 300);
+
+	&:hover, &:focus {
+		outline: 0;
+	}
+}
+
+.btn {
+	border: 0;
+	outline: 0;
+	font-size: 18px;
+	font-weight: 700;
+	line-height: 29px;
+	color: var(--black);
+	padding: 11px 30px 12px;
+	background: transparent;
+	@include border-radius(500px);
+	border: 2px solid var(--primary);
+	@include transition(all 0.3s ease);
+	box-shadow: 0px 16px 24px 0px rgba(0, 0, 0, 0.12);
+
+	&:hover, &:focus {
+		outline: 0;
+		color: var(--white);
+		background: var(--primary);
+		box-shadow: 0px 16px 24px 0px rgba(0, 0, 0, 0.12);
+	}
+}
+
+.entry-title {
+
+	.sub-title {
+		display: block;
+	}
+
+	.title {
+		margin: 0;
+	}
+
+	p {
+		margin: 0;
+	}
+}
+
+.desc-big {
+	font-size: 18px;
+	line-height: 28px;
+}
+
+.fz-big {
+	font-size: 20px;
+	line-height: 30px;
+}
+
+.container {
+	width: 100%;
+	max-width: 1240px;
+	padding-left: 30px;
+	padding-right: 30px;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.container-fluid {
+	padding-left: 50px;
+	padding-right: 50px;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.lr-10 {
+	margin-left: -10px;
+	margin-right: -10px;
+
+	>[class*="col"] {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+}
+
+.list-inline {
+	margin-left: -5px;
+	margin-right: -5px;
+
+	li {
+		padding-left: 5px;
+		padding-right: 5px;
+		display: inline-block;
+	}
+}
+
+.fluid {
+	max-width: 100% !important;
+
+	br {
+		display: none;
+	}
+
+	h1, h2, h3, h4, h5, h6,
+	.h1, .h2, .h3, .h4, .h5, .h6, p, 
+	.entry-title, .description, .block-content, 
+	.content, .testi-item, .quote, 
+	.missionvission__content, .content__editor, .text {
+		max-width: 100% !important;
+	}
+}
+
+.content-area {
+	overflow: hidden;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.spacetop {
+	padding-top: 136px;
+}
+
+.help {
+	width: 15px;
+	height: 15px;
+	font-size: 6px;
+	line-height: 15px;
+	text-align: center;
+	color: var(--white);
+	position: relative;
+	border-radius: 500px;
+	display: inline-block;
+	vertical-align: middle;
+	background: var(--primary);
+
+	&.top {
+		vertical-align: top;
+	}
+
+	&:before {
+		content: "";
+		font-family: "powerelevatorltd";
+	}
+}
+@import "default_template";

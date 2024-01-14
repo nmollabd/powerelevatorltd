@@ -1,0 +1,11 @@
+// MIXIN
+@import 'mixin';
+
+// ICON FONTS
+@include icon-config(
+	'../fonts', 
+	'powerelevatorltd', 
+	'18093842'
+);
+
+@import 'icon';
